@@ -1,5 +1,8 @@
 .chatbox{
-    padding-top:1rem;
+    display:grid;
+    grid-template-rows: 10% 80% 10%;
+    gap:0.1rem;
+    overflow:hidden;
 }
 .chat-header{
     display:flex;
@@ -32,7 +35,6 @@
     padding:1rem 2rem;
     display:flex;
     flex-direction:column;
-    gap:1rem;
     overflow:auto;
     
 }
@@ -44,27 +46,17 @@
       border-radius: 1rem;
     }
 }
-.message{
+.messagecnt{
     display:flex;
-    align-items: center;
+    flex-direction: column;
 }
-.message>content{
-    max-width: 40%;
-    font-size:1.1rem;
-    padding:1rem;
-    overflow-wrap: break-word;
-    border-radius: 1rem;
-    color:#d1d1d1;
+.send{
+    padding:15px;
+    background-color: rgb(6, 8, 46);
+    align-self: flex-end;
 }
-.sended{
-    justify-content: flex-end;
-}
-.sended>content{
-    background-color: #4f04ff21;
-}
-.recieved{
-    justify-content: flex-start; 
-}
-.recieved>content{
-    background-color: #9900ff20;
+.recieve{
+    padding:15px;
+    background-color: rgb(41, 49, 82);
+    align-self: flex-start;
 }

@@ -35,6 +35,8 @@ const ChatContainer = ({currentChat,currentUser}) => {
 
   const handleSendMsg = async(msg) => {
     try{
+      console.log({"currentUser._id":currentUser._id});
+      console.log({"currentChat._id":currentChat._id});
       await axios.post(sendMsgRoute,{
         from:currentUser._id,
         to:currentChat._id,
@@ -66,17 +68,12 @@ const ChatContainer = ({currentChat,currentUser}) => {
             <div className="chatMessages">
               {
                 messages.map((message,id)=>{
-                    return (
-                      <div className="content" key={id}>
-                        <div className={`message${message.fromSelf?"sended":"recieved"}`}>
-                          <div className="content">
-                            <p>
-                              {message.message}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    )
+                  console.log(message);
+                  return (
+                    <div className="messagecnt">
+                    <p className={message.fromSelf===true?'send':'recieve'}>{message.message}</p>
+                    </div>
+                  )
                 })
               }
             </div>
